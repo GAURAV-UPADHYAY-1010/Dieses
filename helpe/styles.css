@@ -1,0 +1,140 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #2c7a7b;
+    color: white;
+    padding: 15px 10px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 10px 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 15px; /* Even spacing between items */
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+#catalog {
+    padding: 20px;
+}
+
+#plant-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adds spacing between cards */
+    justify-content: space-between;
+}
+
+.plant-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.33% - 20px); /* Default: Three cards per row */
+    max-width: calc(33.33% - 20px); /* Ensure cards don't exceed this width */
+    box-sizing: border-box; /* Includes padding in width calculations */
+}
+
+.plant-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: #2c7a7b;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    position: relative;
+    clear: both;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    /* For large laptops and small desktops */
+    #plant-list {
+        gap: 15px; /* Reduce gap for medium screens */
+    }
+
+    .plant-card {
+        flex: 1 1 calc(45% - 20px); /* Two cards per row */
+        max-width: calc(45% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    /* For tablets */
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        gap: 10px; /* Reduce spacing in navigation */
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+
+    #plant-list {
+        gap: 15px; /* Further reduce gap for smaller devices */
+    }
+
+    .plant-card {
+        flex: 1 1 calc(100% - 20px); /* Single card per row */
+        max-width: calc(100% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    /* For mobile phones */
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack navigation items */
+        align-items: center;
+        gap: 8px; /* Smaller spacing */
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    nav ul li a {
+        font-size: 0.85rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
